@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Adopt a Friend Today</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body { font-family: Arial, sans-serif; margin: 0; background: #eaf6f6; }
+header { background: #009688; color: white; text-align: center; padding: 15px; }
+footer { background: #4db6ac; color: white; text-align: center; padding: 10px; }
+.pet-card, .why-adopt, .box, .contact-card {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.pet-card img { width: 100%; border-radius: 8px; }
+.btn { background: #009688; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; display: inline-block; cursor: pointer; }
+.btn:hover { background: #00796b; }
+.modal, .thanks {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal:target, .thanks:target { display: flex; }
+.box input, .box textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.close { float: right; text-decoration: none; font-weight: bold; color: #e53935; }
+.why-adopt ul { list-style-position: inside; padding-left: 0; text-align: left; }
+.why-adopt li { margin: 5px 0; }
+.social-icons a { display: inline-block; margin: 0 6px; }
+.social-icons img { width: 30px; vertical-align: middle; }
+.contact-card a { color: #009688; text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Adopt a Friend Today!</h1>
+  <p>Give love. Get love. Change a life ❤️</p>
+</header>
+
+<div class="pet-card">
+  <img src="pet.jpg" alt="Cute Dog">
+  <h2>Bruno</h2>
+  <p><b>Age:</b> 2 years</p>
+  <p><b>Breed:</b> Maltese</p>
+  <p>"Meet Bruno, a lovable Maltese dog with a fluffy coat and a heart of gold! Bruno loves snuggling on the couch and going on leisurely walks with his favorite humans."</p>
+  <a href="#form" class="btn">Adopt Me</a>
+</div>
+
+<div class="why-adopt">
+  <h3>Why Adopt Bruno?</h3>
+  <ul>
+    <li>Too cute to ignore.</li>
+    <li>House-Trained and friendly.</li>
+    <li>Healthy and vaccinated.</li>
+    <li>Brings joy and love to your home.</li>
+  </ul>
+</div>
+
+
+<!-- NEW: Contact box with phone + email -->
+<div class="contact-card" aria-label="Contact information">
+  <h3>Contact</h3>
+  <p><strong>Call/WhatsApp:</strong> <a href="tel:+919885874990">+91 9885874990</a></p>
+  <p><strong>Email:</strong> <a href="mailto:furryfriends@gmail.com">furryfriends@gmail.com</a></p>
+</div>
+
+
+<footer>
+  <p>Furry Friends Shelter – Hyderabad</p>
+  <div class="social-icons">
+    <!-- Turn icons into links (replace # with your real URLs) -->
+    <a href="#" aria-label="Facebook" target="_blank" rel="noopener">
+      <img src="facebook.png" alt="Facebook">
+    </a>
+    <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+    <a href="#" aria-label="Twitter/X" target="_blank" rel="noopener">
+      <img src="twitter.png" alt="Twitter/X">
+    </a>
+  </div>
+</footer>
+
+<!-- Form (modal) -->
+<div id="form" class="modal" role="dialog" aria-modal="true" aria-labelledby="form-title">
+  <div class="box">
+    <a href="#" class="close" aria-label="Close">×</a>
+    <h3 id="form-title">Adoption Form</h3>
+    <!-- On submit, show #thanks (no JS) -->
+    <form action="#thanks" method="get" autocomplete="on">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <!-- NEW: Email field -->
+      <input type="email" name="email" placeholder="Email Address" required>
+      <textarea name="message" placeholder="Why do you want to adopt Bruno?" rows="4"></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <!-- Quick contact inside modal too (optional) -->
+    <p style="margin-top:10px;font-size:14px;">
+       </p>
+  </div>
+</div>
+
+<!-- Thank You -->
+<div id="thanks" class="thanks" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
+  <div class="box">
+    <a href="#" class="close" aria-label="Close">×</a>
+    <h3 id="thanks-title">✅ Thank You!</h3>
+    <p>We’ll contact you soon about Bruno.</p>
+        </p>
+  </div>
+</div>
+
+</body>
+</html>
+
